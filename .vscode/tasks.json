@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make",
+            "type": "shell",
+            // "command": "make", // gcc compiler
+            "command": "bash -c 'source /opt/intel/oneapi/setvars.sh --force && make'",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make clean",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            }
+        },
+        {
+            "label": "build",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "clean",
+                "make",
+            ]
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./myapp",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "build",
+            ]
+        }
+    ]
+}

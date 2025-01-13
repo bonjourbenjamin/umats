@@ -1,0 +1,31 @@
+{
+    // general fortran settings
+    "editor.rulers": [7, 132],
+    "fortran.preferredCase": "lowercase",
+
+    // fortran language server - code completion, diagnostics, hovering and more.
+    // https://fortls.fortran-lang.org/index.html
+    "fortran.fortls.disabled": false,
+    "fortran.fortls.path": "!!! TBC !!! /miniconda3/envs/fort/lib/python3.9/site-packages/fortls",
+    "fortran.fortls.notifyInit": true,
+    "fortran.fortls.sortKeywords": true,
+
+    // fortran linter - compiler error and warning detection while coding without the user having to compile
+    "fortran.linter.compiler": "ifort",
+    "fortran.linter.includePaths": ["${workspaceFolder}/src/**"],
+    "fortran.linter.compilerPath": "/opt/intel/oneapi/compiler/latest/linux/bin/intel64/ifort",
+    "files.exclude": {
+    "**/*.i90": true
+      },
+
+    // fortran formatter - automatically format source files
+    // https://github.com/gnikit/findent-pypi
+    "fortran.formatting.formatter": "findent",
+    "fortran.formatting.path": "!!! TBC !!! /miniconda3/envs/fort/bin",
+    "fortran.formatting.findentArgs": ["-Cn", "-Rr"],
+
+    // intermediate files generated from ifort compiler during linting
+    "files.associations": {
+        "*.i90": "FortranFreeForm"
+      },
+}
